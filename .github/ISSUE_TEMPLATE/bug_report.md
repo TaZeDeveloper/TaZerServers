@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-#Bug Report
+<h1>Bug Report
 
 
 **Server:** 
