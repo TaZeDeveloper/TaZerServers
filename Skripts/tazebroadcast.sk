@@ -2,43 +2,19 @@
 
 # Find the config @ plugins/TaZeBroadcast
 
-
-
-
-
 on load:
     load yaml "plugins/TaZeBroadcast/config.yml" as "config"
-    
-
-
     if yaml "config" is empty:
-        
-        
-        
         set the header of "config" to "==================================" and "TaZerAutoBroadCast Plugin" and "==================================" and "An easy to use autobroadcast plugin." and "At the moment it only says a message every 2 minutes but soon they may be a feature for a timer" and " " and "Add as many messages you want under here!"
-    
-    
-        
         set yaml value "random" from "config" to false
         set yaml list "messages" from "config" to "/n &6&lTaZer&b&lBroadCast &f&l» &aMessage 1/n", "/n &6&lTaZer&b&lBroadCast &f&l» &aMessage 2/n", "/n &6&lTaZer&b&lBroadCast &f&l» &aMessage 3/n" and "/n &6&lTaZer&b&lBroadCast &f&l» &aMessage 4/n"
-    
-        
-    
-
- 
-    
-        
-
-    
-        
         set the comments of yaml node "random" from "config" to "Setting this to true will make the messages be said in a random order"
         set the comments of yaml node "messages" from "config" to "Add messages to this list. As many as you want!"
         save yaml "config"
     set {tazebroadcast.messages::*} to yaml list "messages" from "config"
     set {tazebroadcast.random} to yaml value "random" from "config"
 
-    
-    
+
 every 2 minutes:
 
     if {tazebroadcast.random} is not true:
@@ -58,5 +34,4 @@ every 2 minutes:
         loop {_messages::*}:
             send coloured loop-value to players
         
-    
-    
+ 
