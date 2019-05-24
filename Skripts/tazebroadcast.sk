@@ -1,3 +1,10 @@
+# An easy to use broadcast plugin!
+
+# Find the config @ plugins/TaZeBroadcast
+
+
+
+
 
 on load:
     load yaml "plugins/TaZeBroadcast/config.yml" as "config"
